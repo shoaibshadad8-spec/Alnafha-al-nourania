@@ -4,7 +4,7 @@ let currentIndex = -1;
 /* ---------- Service Worker: تشغيل الموقع من غير نت زي تطبيق حقيقي ---------- */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').then(reg => {
+    navigator.serviceWorker.register('sw.js').then(reg => {
       // لو فيه نسخة جديدة من sw.js متاحة، فعّلها فورًا من غير ما نستنى إقفال كل التابات
       reg.addEventListener('updatefound', () => {
         const nw = reg.installing;

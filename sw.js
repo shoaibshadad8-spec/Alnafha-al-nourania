@@ -1,21 +1,23 @@
 // Service worker: يخزّن كل ملفات الموقع محليًا عشان يشتغل بسرعة ومن غير نت تمامًا،
 // وفي نفس الوقت يجيب أي تحديث جديد أول ما يبقى النت متاح.
+// ملحوظة: المسارات هنا نسبية (من غير / في الأول) عشان تشتغل صح سواء الموقع
+// على نطاق رئيسي أو جوه مسار فرعي زي GitHub Pages (user.github.io/repo-name/).
 
-const CACHE_VERSION = 'v2'; // غيّر الرقم ده مع كل تحديث كبير للملفات عشان يجبر تحديث الكاش
+const CACHE_VERSION = 'v3'; // غيّر الرقم ده مع كل تحديث كبير للملفات عشان يجبر تحديث الكاش
 const CACHE_NAME = 'nafha-cache-' + CACHE_VERSION;
 
 const CORE_ASSETS = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/sections.json',
-  '/manifest.json',
-  '/assets/favicon.svg',
-  '/assets/favicon-32.png',
-  '/assets/apple-touch-icon.png',
-  '/assets/icon-192.png',
-  '/assets/icon-512.png'
+  './',
+  './index.html',
+  './style.css',
+  './script.js',
+  './sections.json',
+  './manifest.json',
+  './assets/favicon.svg',
+  './assets/favicon-32.png',
+  './assets/apple-touch-icon.png',
+  './assets/icon-192.png',
+  './assets/icon-512.png'
 ];
 
 // عند التثبيت: خزّن كل ملف على حدة، وما توقفش لو ملف واحد فشل
@@ -59,7 +61,7 @@ self.addEventListener('fetch', (event) => {
         caches.match(req).then((cached) => {
           if (cached) return cached;
           // لو طلب صفحة (تنقل) ومفيش نسخة محفوظة، رجّع الصفحة الرئيسية كبديل
-          if (req.mode === 'navigate') return caches.match('/index.html');
+          if (req.mode === 'navigate') return caches.match('./index.html');
           return Response.error();
         })
       )
