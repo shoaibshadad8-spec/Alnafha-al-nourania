@@ -39,7 +39,7 @@ function App() {
       ${TABS.map(([to, label, ic]) => html`
         <a key=${to} href=${'#' + to} className=${(path || '/') === to ? 'active' : ''}><${Icon} n=${ic} />${label}</a>`)}
     </nav>
-  <//>`;
+  </${React.Fragment}>`;
 }
 
 createRoot(document.getElementById('root')).render(html`<${App} />`);
