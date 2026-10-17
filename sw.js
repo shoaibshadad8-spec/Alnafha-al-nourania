@@ -3,14 +3,16 @@
 // ملحوظة: المسارات هنا نسبية (من غير / في الأول) عشان تشتغل صح سواء الموقع
 // على نطاق رئيسي أو جوه مسار فرعي زي GitHub Pages (user.github.io/repo-name/).
 
-const CACHE_VERSION = 'v3'; // غيّر الرقم ده مع كل تحديث كبير للملفات عشان يجبر تحديث الكاش
+const CACHE_VERSION = 'v5'; // غيّر الرقم ده مع كل تحديث كبير للملفات عشان يجبر تحديث الكاش
 const CACHE_NAME = 'nafha-cache-' + CACHE_VERSION;
 
 const CORE_ASSETS = [
   './',
   './index.html',
   './style.css',
-  './script.js',
+  './js/main.js',
+  './js/lib.js',
+  './js/pages.js',
   './sections.json',
   './manifest.json',
   './assets/favicon.svg',
