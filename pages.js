@@ -26,7 +26,7 @@ export function Home() {
       <div className="arches">
         ${SHEIKHS.map((n, k) => html`
           <figure className="arch" style=${{ '--n': k }} key=${n}>
-            <img src=${`assets/sheikhs/${k + 1}.jpg`} alt=${n} width="480" height="560" />
+            <img src=${`${k + 1}.jpg`} alt=${n} width="480" height="560" />
             <figcaption>${n}</figcaption>
           </figure>`)}
       </div>
@@ -56,7 +56,7 @@ export function Home() {
 
     <p className="lede">نص الكتاب كاملاً في ٤٨ قسمًا، من المقدمة إلى بيعة الطريق، منسوخ عن الطبعة التي أشار بها فضيلة الشيخ خالد أمير محمد.</p>
     <p className="foot">هذا الموقع غير رسمي، وهو عرض مبسّط لنص الكتاب لتسهيل الاطلاع عليه ومشاركته.</p>
-  <//>`;
+  </${Fragment}>`;
 }
 
 /* ============ الفهرس والبحث ============ */
@@ -100,7 +100,7 @@ export function Index() {
           </a>
         </li>`)}
     </ul>
-  <//>`;
+  </${Fragment}>`;
 }
 
 /* ============ القارئ ============ */
@@ -197,7 +197,7 @@ export function Reader({ idx, params }) {
       <a href="#/index">الفهرس</a>
       <button disabled=${idx === sections.length - 1} onClick=${() => go(1)}>القسم التالي</button>
     </div>
-  <//>`;
+  </${Fragment}>`;
 }
 
 /* ============ السبحة ============ */
@@ -258,5 +258,5 @@ export function About() {
       <a className="btn solid" href="https://wa.me/201157251575" target="_blank" rel="noopener noreferrer">تواصل عبر واتساب</a>
       <span dir="ltr" className="tel">01157251575</span>
     </div>
-  <//>`;
+  </${Fragment}>`;
 }
